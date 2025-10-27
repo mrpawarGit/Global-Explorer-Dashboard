@@ -1,13 +1,22 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 export default function Navbar() {
   return (
-    <nav style={{ padding: "1rem", background: "#f0f0f0" }}>
-      <Link to="/" style={{ marginRight: "1rem" }}>
-        Home
-      </Link>
-      <Link to="/favorites">Favorites</Link>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <Link to="/" className="navbar-brand">
+          Global Explorer Dashboard
+        </Link>
+        <div className="navbar-links">
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+          <Link to="/favorites" className="nav-link">
+            Favorites
+          </Link>
+        </div>
+      </div>
     </nav>
   );
 }
