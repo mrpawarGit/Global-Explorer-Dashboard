@@ -3,13 +3,22 @@ import { useState, useEffect } from "react";
 export const useFavorites = () => {
   const [favorites, setFavorites] = useState(() => {
     // Initialize from localStorage
-    const saved = localStorage.getItem("favorites");
-    return saved ? JSON.parse(saved) : [];
+    try {
+      const saved = localStorage.getItem("favorites");
+      return saved ? JSON.parse(saved) : [];
+    } catch (error) {
+      console.error("Error loading favorites:", error);
+      return [];
+    }
   });
 
   // Sync to localStorage whenever favorites change
   useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(favorites));
+    try {
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    } catch (error) {
+      console.error("Error saving favorites:", error);
+    }
   }, [favorites]);
 
   const toggleFavorite = (countryCode) => {
@@ -26,5 +35,9 @@ export const useFavorites = () => {
     return favorites.includes(countryCode);
   };
 
-  return { favorites, toggleFavorite, isFavorite };
+  const clearAllFavorites = () => {
+    setFavorites([]);
+  };
+
+  return { favorites, toggleFavorite, isFavorite, clearAllFavorites };
 };

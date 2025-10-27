@@ -1,0 +1,50 @@
+.filter-bar {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.filter-select {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.3s;
+  min-width: 180px;
+}
+
+.filter-select:hover {
+  border-color: #c0c0c0;
+}
+
+.filter-select:focus {
+  border-color: #3b82f6;
+}
+
+@media (max-width: 768px) {
+  .filter-bar {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .filter-select {
+    width: 100%;
+  }
+}
