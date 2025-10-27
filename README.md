@@ -2,6 +2,8 @@
 
 An interactive React web application that allows users to explore countries worldwide, view detailed information, weather conditions, and local news from multiple external APIs.
 
+## 🌐 Live - [Global Explorer Dashboard](https://global-explorer-dashboard.vercel.app/)
+
 ## 🎯 Overview
 
 Global Explorer Dashboard is a modern, responsive web application built with React that provides comprehensive information about 250+ countries. Users can search, filter, and explore countries with real-time weather data and local news integration.
